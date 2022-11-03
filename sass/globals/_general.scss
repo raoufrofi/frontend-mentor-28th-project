@@ -1,0 +1,26 @@
+*,
+*::after,
+*::after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+.block {
+  display: block;
+}
+.full {
+  width: 100%;
+}
+.inline {
+  display: inline-block;
+}
+.none {
+  display: none;
+}

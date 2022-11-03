@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <header class="header">
+      <section class="header__card--parent">
+        <div class="header__card-front header__card">
+          <img src="images/bg-card-front.png" alt="" />
+          <div class="card__data">
+            <img src="images/card-logo.svg" alt="" />
+            <div class="card__personal">
+              <p class="card__number">0000 0000 0000 0000</p>
+              <p class="card__holder">John Steve</p>
+              <p class="card__date">00/00</p>
+            </div>
+          </div>
+        </div>
+        <div class="header__card-back header__card">
+          <img src="images/bg-card-back.png" alt="" />
+          <small class="card__cnc">000</small>
+        </div>
+      </section>
+    </header>
+
+    <main class="form main">
+      <form action="#" id="form" class="">
+        <div class="form__name full">
+          <label for="name">Cardholder Name</label>
+          <input
+            class="block full"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="e.g John Steve"
+          />
+          <p class="name-alert alert"></p>
+        </div>
+        <div class="form__number full">
+          <label for="number">Card Number</label>
+          <input
+            class="block full"
+            placeholder="e.g 9654 3546 8795 3200"
+            type="text"
+            id="number"
+          />
+          <p class="number-alert alert"></p>
+        </div>
+        <div class="form__date">
+          <label class="block" for="date">Exp.Date (MM/YY)</label>
+          <input class="" placeholder="MM" type="text" id="month" />
+          <input class="" placeholder="YY" type="text" id="year" />
+          <p class="date-alert alert"></p>
+        </div>
+        <div class="form__cvc">
+          <label class="block" for="cvc">CVC</label>
+          <input class="full" placeholder="893" type="text" id="cvc" />
+          <p class="cvc-alert alert inline"></p>
+        </div>
+        <div class="form__btn full">
+          <input class="full" value="Confirm" type="submit" />
+        </div>
+      </form>
+    </main>
+
+    <!-----------------
+    COMPLETED
+  -------------------->
+    <main class="form none complete">
+      <form action="#" id="form">
+        <div class="img" style="width: 200px; margin: auto">
+          <img src="images/icon-complete.svg" alt="" />
+        </div>
+        <div class="form__btn">
+          <input class="full" id="continue" value="Continue" type="submit" />
+        </div>
+      </form>
+    </main>
+
+    <!-- Completed state start -->
+
+    <!-- Thank you! We've added your card details Continue -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+@use "globals" as g;
+@use "util" as u;
+
+body,
+input,
+textarea {
+  font-family: g.$space-grotesk;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  @include u.breakpoint(tab) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+/*------
+HEADER
+-------*/
+.header {
+  height: 35vh;
+  background-color: g.$very-dark-violet;
+  z-index: -1;
+  @include u.f-center;
+
+  @include u.breakpoint(tab) {
+    height: 100vh;
+    width: min(30%, 500px);
+    display: flex;
+    justify-content: end;
+  }
+
+  &__card--parent {
+    width: min(90%, 500px);
+    position: relative;
+    height: 100%;
+
+    @include u.breakpoint(tab) {
+      height: min(50%, 400px);
+    }
+  }
+
+  &__card {
+    width: min(300px, 70%);
+    min-width: 280px;
+    position: absolute;
+
+    @include u.breakpoint(tab) {
+      width: min(400px, 80%);
+    }
+  }
+
+  &__card-front {
+    z-index: 1;
+    bottom: -20%;
+    left: 0;
+
+    @include u.breakpoint(tab) {
+      bottom: unset;
+      top: 0;
+      left: unset;
+      right: -5vw;
+    }
+  }
+
+  &__card-back {
+    z-index: 0;
+    top: 2em;
+    right: 0;
+
+    @include u.breakpoint(tab) {
+      top: unset;
+      bottom: 0;
+      right: -10vw;
+    }
+  }
+}
+
+/*
+CARD DATA
+*/
+.card {
+  &__data {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: g.$white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: u.em(10);
+
+    img {
+      width: 60px;
+    }
+  }
+
+  &__personal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: u.em(16);
+  }
+  &__number {
+    font-size: u.rem(24);
+  }
+
+  &__cnc {
+    position: absolute;
+    color: g.$white;
+    top: 48%;
+    right: u.em(40);
+    transform: translate(0, -50%);
+  }
+}
+
+/*
+MAIN
+*/
+.form {
+  padding: u.em(64) u.em(40);
+  color: g.$very-dark-violet;
+  width: min(95%, 500px);
+  margin: auto;
+  transition: all 0.5s;
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: u.em(16);
+
+    label {
+      margin-bottom: u.em(10);
+      font-weight: bold;
+    }
+    input {
+      outline: none;
+      padding: u.em(10);
+      font-size: u.rem(16);
+      font-weight: bold;
+      border: 1px solid g.$very-dark-violet;
+
+      &::placeholder {
+        color: rgba(128, 128, 128, 0.479);
+      }
+    }
+  }
+
+  &__date {
+    width: 50%;
+    input {
+      width: 48%;
+    }
+  }
+
+  &__cvc {
+    width: 45%;
+  }
+
+  &__btn {
+    input {
+      border-radius: u.em(7);
+      padding: u.em(16);
+      font-weight: bold;
+      color: g.$white;
+      background-color: g.$very-dark-violet;
+      cursor: pointer;
+    }
+  }
+}
+
+// MAIN UTILITY CLASS
+.complete {
+  transition: all 0.5s;
+  form {
+    flex-direction: column;
+  }
+  .form__btn {
+    width: 50%;
+    margin: auto;
+    margin: auto;
+  }
+}
+
+// ALERT
+.alert {
+  font-size: 12px;
+  margin-top: 0.25em;
+  color: orangered;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,16 @@
+@mixin f-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin bdr($size: 1px, $color: black) {
+  border: 1px solid black;
+}
+
+@mixin background($link) {
+  background-image: url($link);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
